@@ -2,6 +2,7 @@ package app.com.example.montse_i_xavi.sunshinetest6;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +28,6 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        ArrayAdapter<String> mForecastAdapter;
-
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
 
         //Create a String list
         String[] forecastArray = {
@@ -42,15 +39,15 @@ public class MainActivityFragment extends Fragment {
                 "Sat - HELP TRAPPED IN WEATHERSTATION - 60/51",
                 "Sun - Sunny - 80/68"
         };
-        List<String> weekforecast = new ArrayList<String>(
-                Arrays.asList(forecastArray));
 
+        List<String> weekforecast = new ArrayList<String>(
+               Arrays.asList(forecastArray));
 
 
         // Ara que ja tenim les dades de la nostra tonta previsió del temps, creem un ArrayAdapter
         // L'ArrayAdapter agafa les dades de la font(igual que la nostra tonta previsió del temps) i
         // l'utilitza per omplir la ListView a la que està adjunta
-        mForecastAdapter = new ArrayAdapter<String>(
+        ArrayAdapter<String>  mForecastAdapter = new ArrayAdapter<String>(
                 //el context actual (this fragment's parent activity)
                 getActivity(),
                 //ID of list item layout
@@ -62,10 +59,14 @@ public class MainActivityFragment extends Fragment {
 
 
         // Get a reference to the ListView, and attach this adapter to it.
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
 
         return rootView;
 
     }
+
+
 }
