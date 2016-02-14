@@ -28,7 +28,6 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         //Create a String list
         String[] forecastArray = {
                 "Today - Sunny - 88/63",
@@ -56,7 +55,6 @@ public class MainActivityFragment extends Fragment {
                 R.id.listview_forecast,
                 //forecast data
                 weekforecast);
-
 
         // Get a reference to the ListView, and attach this adapter to it.
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
