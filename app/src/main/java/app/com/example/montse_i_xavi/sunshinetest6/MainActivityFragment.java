@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.com.example.montse_i_xavi.sunshinetest6.R;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -52,7 +51,7 @@ public class MainActivityFragment extends Fragment {
                 //ID of list item layout
                 R.layout.list_item_forecast,
                 //ID of the textview to populate
-                R.id.listview_forecast,
+                R.id.list_item_forecast_textview,
                 //forecast data
                 weekforecast);
 
